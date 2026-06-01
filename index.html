@@ -15,7 +15,6 @@
     --border: rgba(255,255,255,0.09);
     --muted: rgba(255,255,255,0.38);
     --blue: #74ACE4;
-    --green-ok: #7fce99;
   }
   html, body {
     background: var(--dark);
@@ -34,65 +33,41 @@
     z-index: 0;
   }
   .page {
-    position: relative;
-    z-index: 1;
-    max-width: 430px;
-    margin: 0 auto;
+    position: relative; z-index: 1;
+    max-width: 430px; margin: 0 auto;
     padding: 48px 20px 64px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 24px;
   }
   .header { display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .ball {
-    font-size: 56px; line-height: 1; margin-bottom: 12px;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
+  .ball { font-size: 56px; line-height: 1; margin-bottom: 12px; animation: float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
   .tag {
     display: inline-block;
-    background: rgba(245,197,24,0.12);
-    border: 1px solid rgba(245,197,24,0.3);
-    color: var(--gold);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 3px; text-transform: uppercase;
+    background: rgba(245,197,24,0.12); border: 1px solid rgba(245,197,24,0.3);
+    color: var(--gold); font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
     padding: 5px 14px; border-radius: 100px; margin-bottom: 18px;
   }
   h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 68px; font-weight: 900;
-    line-height: 0.88; text-transform: uppercase;
-    letter-spacing: -1px; margin-bottom: 4px;
+    font-size: 68px; font-weight: 900; line-height: 0.88;
+    text-transform: uppercase; letter-spacing: -1px; margin-bottom: 4px;
   }
   h1 em { font-style: italic; color: var(--gold); }
   .subtitle { font-size: 14px; font-weight: 300; color: var(--muted); letter-spacing: 0.5px; }
-  .stats {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 8px; width: 100%;
-  }
-  .stat {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 14px 8px; text-align: center;
-  }
-  .stat-n {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 28px; font-weight: 900; color: var(--gold); line-height: 1;
-  }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 8px; text-align: center; }
+  .stat-n { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 900; color: var(--gold); line-height: 1; }
   .stat-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 3px; }
   .cta-section { width: 100%; display: flex; flex-direction: column; gap: 10px; }
   .cta-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 4px; }
   .btn-primary {
     display: flex; align-items: center; justify-content: center; gap: 12px;
-    width: 100%; padding: 20px 24px;
-    background: var(--gold); color: #000;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;
-    border-radius: 16px; text-decoration: none; border: none; cursor: pointer;
+    width: 100%; padding: 20px 24px; background: var(--gold); color: #000;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900;
+    letter-spacing: 0.5px; text-transform: uppercase; border-radius: 16px;
+    text-decoration: none; border: none; cursor: pointer;
     transition: all 0.15s; position: relative; overflow: hidden;
   }
   .btn-primary::before {
@@ -103,16 +78,11 @@
   .btn-icon { font-size: 24px; position: relative; }
   .btn-text { position: relative; line-height: 1; }
   .btn-sub {
-    font-family: 'Barlow', sans-serif; font-size: 11px;
-    font-weight: 400; opacity: 0.6; text-transform: none;
-    letter-spacing: 0; display: block; margin-top: 2px;
+    font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 400;
+    opacity: 0.6; text-transform: none; letter-spacing: 0; display: block; margin-top: 2px;
   }
-  .divider-row {
-    display: flex; align-items: center; gap: 12px; width: 100%;
-  }
-  .divider-row::before, .divider-row::after {
-    content: ''; flex: 1; height: 1px; background: var(--border);
-  }
+  .divider-row { display: flex; align-items: center; gap: 12px; width: 100%; }
+  .divider-row::before, .divider-row::after { content: ''; flex: 1; height: 1px; background: var(--border); }
   .divider-row span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
   .btn-secondary {
     display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -121,7 +91,6 @@
     border: 1px solid var(--border); border-radius: 12px;
     text-decoration: none; transition: all 0.15s;
   }
-  .btn-secondary:active { background: rgba(255,255,255,0.05); color: #fff; }
   .arg-card {
     width: 100%;
     background: linear-gradient(135deg, rgba(116,172,228,0.08) 0%, rgba(245,197,24,0.05) 100%);
@@ -129,22 +98,11 @@
   }
   .arg-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
   .arg-flag { font-size: 24px; }
-  .arg-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px; font-weight: 700; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--blue);
-  }
+  .arg-name { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); }
   .arg-group { font-size: 11px; color: var(--muted); margin-top: 1px; }
   .matches { display: flex; flex-direction: column; gap: 10px; }
-  .match {
-    display: flex; align-items: center; gap: 12px;
-    background: rgba(0,0,0,0.2); border-radius: 10px; padding: 12px 14px;
-  }
-  .match-date {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px; font-weight: 700; color: var(--gold);
-    white-space: nowrap; min-width: 56px;
-  }
+  .match { display: flex; align-items: center; gap: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; padding: 12px 14px; }
+  .match-date { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; color: var(--gold); white-space: nowrap; min-width: 56px; }
   .match-info { flex: 1; min-width: 0; }
   .match-teams { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .match-venue { font-size: 11px; color: var(--muted); margin-top: 2px; }
@@ -155,24 +113,21 @@
 <body>
 <div class="glow-top"></div>
 <div class="page">
-
   <div class="header">
     <div class="ball">⚽</div>
     <div class="tag">FIFA World Cup 2026</div>
     <h1>Todos los<br><em>partidos</em><br>en tu celu</h1>
     <p class="subtitle">104 partidos · hora argentina · un tap</p>
   </div>
-
   <div class="stats">
     <div class="stat"><div class="stat-n">104</div><div class="stat-l">Partidos</div></div>
     <div class="stat"><div class="stat-n">48</div><div class="stat-l">Equipos</div></div>
     <div class="stat"><div class="stat-n">16</div><div class="stat-l">Estadios</div></div>
     <div class="stat"><div class="stat-n">39</div><div class="stat-l">Días</div></div>
   </div>
-
   <div class="cta-section">
     <p class="cta-label">Agregá el calendario ahora</p>
-    <a class="btn-primary" href="https://santidelgiudice.github.io/mundial2026/redirect.html">
+    <a class="btn-primary" href="https://tinyurl.com/mundial2026santi">
       <span class="btn-icon">📅</span>
       <span class="btn-text">
         Agregar al calendario
@@ -182,7 +137,6 @@
     <div class="divider-row"><span>o desde la web</span></div>
     <a class="btn-secondary" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank">Agregar desde Google Calendar web →</a>
   </div>
-
   <div class="arg-card">
     <div class="arg-header">
       <span class="arg-flag">🇦🇷</span>
@@ -218,7 +172,6 @@
       </div>
     </div>
   </div>
-
   <p class="footer">USA · Canadá · México · 11 jun → 19 jul 2026</p>
 </div>
 </body>
