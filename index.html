@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -45,9 +46,7 @@
   }
   .header { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .ball {
-    font-size: 56px;
-    line-height: 1;
-    margin-bottom: 12px;
+    font-size: 56px; line-height: 1; margin-bottom: 12px;
     animation: float 3s ease-in-out infinite;
   }
   @keyframes float {
@@ -60,230 +59,80 @@
     border: 1px solid rgba(245,197,24,0.3);
     color: var(--gold);
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 100px;
-    margin-bottom: 18px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 100px; margin-bottom: 18px;
   }
   h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 68px;
-    font-weight: 900;
-    line-height: 0.88;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    margin-bottom: 4px;
+    font-size: 68px; font-weight: 900;
+    line-height: 0.88; text-transform: uppercase;
+    letter-spacing: -1px; margin-bottom: 4px;
   }
   h1 em { font-style: italic; color: var(--gold); }
   .subtitle { font-size: 14px; font-weight: 300; color: var(--muted); letter-spacing: 0.5px; }
-
   .stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    width: 100%;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 8px; width: 100%;
   }
   .stat {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 8px;
-    text-align: center;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 8px; text-align: center;
   }
   .stat-n {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1;
+    font-size: 28px; font-weight: 900; color: var(--gold); line-height: 1;
   }
   .stat-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 3px; }
-
-  /* CTA */
   .cta-section { width: 100%; display: flex; flex-direction: column; gap: 10px; }
   .cta-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 4px; }
-
   .btn-primary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    padding: 20px 24px;
-    background: var(--gold);
-    color: #000;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    width: 100%; padding: 20px 24px;
+    background: var(--gold); color: #000;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 900;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    border-radius: 16px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.15s;
-    position: relative;
-    overflow: hidden;
+    font-size: 22px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;
+    border-radius: 16px; text-decoration: none; border: none; cursor: pointer;
+    transition: all 0.15s; position: relative; overflow: hidden;
   }
   .btn-primary::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    content: ''; position: absolute; inset: 0;
     background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 50%);
   }
   .btn-primary:active { transform: scale(0.98); opacity: 0.92; }
   .btn-icon { font-size: 24px; position: relative; }
   .btn-text { position: relative; line-height: 1; }
   .btn-sub {
-    font-family: 'Barlow', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    opacity: 0.6;
-    text-transform: none;
-    letter-spacing: 0;
-    display: block;
-    margin-top: 2px;
+    font-family: 'Barlow', sans-serif; font-size: 11px;
+    font-weight: 400; opacity: 0.6; text-transform: none;
+    letter-spacing: 0; display: block; margin-top: 2px;
   }
-
-  /* Fallback copy box */
-  .fallback-box {
-    width: 100%;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 16px;
-    display: none;
-  }
-  .fallback-box.visible { display: block; }
-  .fallback-title {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  .url-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0,0,0,0.3);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 14px;
-  }
-  .url-text {
-    flex: 1;
-    font-size: 11px;
-    color: rgba(255,255,255,0.5);
-    word-break: break-all;
-    line-height: 1.4;
-    font-family: monospace;
-  }
-  .copy-btn {
-    background: var(--gold);
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: all 0.15s;
-  }
-  .copy-btn.copied {
-    background: var(--green-ok);
-  }
-  .fallback-steps {
-    margin-top: 12px;
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.7;
-    list-style: none;
-    counter-reset: steps;
-  }
-  .fallback-steps li {
-    counter-increment: steps;
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-  }
-  .fallback-steps li::before {
-    content: counter(steps);
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .show-fallback-btn {
-    background: transparent;
-    border: none;
-    color: var(--muted);
-    font-size: 12px;
-    text-decoration: underline;
-    cursor: pointer;
-    text-align: center;
-    width: 100%;
-    padding: 4px;
-  }
-
   .divider-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
+    display: flex; align-items: center; gap: 12px; width: 100%;
   }
   .divider-row::before, .divider-row::after {
     content: ''; flex: 1; height: 1px; background: var(--border);
   }
   .divider-row span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-
   .btn-secondary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 15px 20px;
-    background: transparent;
-    color: rgba(255,255,255,0.6);
-    font-size: 14px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 15px 20px; background: transparent;
+    color: rgba(255,255,255,0.6); font-size: 14px;
+    border: 1px solid var(--border); border-radius: 12px;
+    text-decoration: none; transition: all 0.15s;
   }
   .btn-secondary:active { background: rgba(255,255,255,0.05); color: #fff; }
-
-  /* Argentina */
   .arg-card {
     width: 100%;
     background: linear-gradient(135deg, rgba(116,172,228,0.08) 0%, rgba(245,197,24,0.05) 100%);
-    border: 1px solid rgba(116,172,228,0.2);
-    border-radius: 16px;
-    padding: 20px;
+    border: 1px solid rgba(116,172,228,0.2); border-radius: 16px; padding: 20px;
   }
   .arg-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
   .arg-flag { font-size: 24px; }
   .arg-name {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase; color: var(--blue);
+    font-size: 15px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--blue);
   }
   .arg-group { font-size: 11px; color: var(--muted); margin-top: 1px; }
   .matches { display: flex; flex-direction: column; gap: 10px; }
@@ -300,7 +149,6 @@
   .match-teams { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .match-venue { font-size: 11px; color: var(--muted); margin-top: 2px; }
   .match-time { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; white-space: nowrap; }
-
   .footer { font-size: 11px; color: rgba(255,255,255,0.18); text-align: center; line-height: 1.7; }
 </style>
 </head>
@@ -324,32 +172,15 @@
 
   <div class="cta-section">
     <p class="cta-label">Agregá el calendario ahora</p>
-
-    <a class="btn-primary" href="webcal://gist.githubusercontent.com/SantiDelGiudice/ae43de9d277d9d0a4fe7d9045f4fa1c7/raw/mundial2026.ics" id="webcalBtn">
+    <a class="btn-primary" href="https://santidelgiudice.github.io/mundial2026/redirect.html">
       <span class="btn-icon">📅</span>
       <span class="btn-text">
         Agregar al calendario
-        <span class="btn-sub">Toca aquí → abre tu app de calendario</span>
+        <span class="btn-sub">Toca aquí · abre tu app de calendario</span>
       </span>
     </a>
-
-    <button class="show-fallback-btn" id="showFallback">¿No funcionó? Ver pasos alternativos</button>
-
-    <div class="fallback-box" id="fallbackBox">
-      <p class="fallback-title">Opción manual</p>
-      <div class="url-row">
-        <span class="url-text" id="urlText">https://gist.githubusercontent.com/SantiDelGiudice/ae43de9d277d9d0a4fe7d9045f4fa1c7/raw/mundial2026.ics</span>
-        <button class="copy-btn" id="copyBtn" onclick="copyURL()">Copiar</button>
-      </div>
-      <ol class="fallback-steps">
-        <li>Copiá la URL de arriba</li>
-        <li>Abrí la app Calendario → Calendarios → Añadir calendario</li>
-        <li>Pegá la URL y confirmá</li>
-      </ol>
-    </div>
-
     <div class="divider-row"><span>o desde la web</span></div>
-    <a class="btn-secondary" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://gist.githubusercontent.com/SantiDelGiudice/ae43de9d277d9d0a4fe7d9045f4fa1c7/raw/mundial2026.ics" target="_blank">Agregar desde Google Calendar web →</a>
+    <a class="btn-secondary" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank">Agregar desde Google Calendar web →</a>
   </div>
 
   <div class="arg-card">
@@ -389,44 +220,6 @@
   </div>
 
   <p class="footer">USA · Canadá · México · 11 jun → 19 jul 2026</p>
-
 </div>
-
-<script>
-document.getElementById('showFallback').addEventListener('click', function() {
-  const box = document.getElementById('fallbackBox');
-  box.classList.toggle('visible');
-  this.textContent = box.classList.contains('visible') ? 'Ocultar' : '¿No funcionó? Ver pasos alternativos';
-});
-
-// Auto-show fallback after 4 seconds if still on page (user probably had trouble)
-setTimeout(() => {
-  const box = document.getElementById('fallbackBox');
-  if (!box.classList.contains('visible')) {
-    box.classList.add('visible');
-    document.getElementById('showFallback').textContent = 'Ocultar';
-  }
-}, 4000);
-
-function copyURL() {
-  const url = 'https://gist.githubusercontent.com/SantiDelGiudice/ae43de9d277d9d0a4fe7d9045f4fa1c7/raw/mundial2026.ics';
-  navigator.clipboard.writeText(url).then(() => {
-    const btn = document.getElementById('copyBtn');
-    btn.textContent = '✓ Copiado';
-    btn.classList.add('copied');
-    setTimeout(() => {
-      btn.textContent = 'Copiar';
-      btn.classList.remove('copied');
-    }, 2500);
-  }).catch(() => {
-    // Fallback: select the text
-    const el = document.getElementById('urlText');
-    const range = document.createRange();
-    range.selectNodeContents(el);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-  });
-}
-</script>
 </body>
 </html>
