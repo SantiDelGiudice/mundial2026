@@ -9,43 +9,18 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --gold: #F5C518;
-    --dark: #080808;
-    --card: rgba(255,255,255,0.05);
-    --border: rgba(255,255,255,0.09);
-    --muted: rgba(255,255,255,0.38);
-    --blue: #74ACE4;
+    --gold: #F5C518; --dark: #080808;
+    --card: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.09);
+    --muted: rgba(255,255,255,0.38); --blue: #74ACE4;
   }
-  html, body {
-    background: var(--dark); color: #fff;
-    font-family: 'Barlow', sans-serif;
-    min-height: 100vh; -webkit-font-smoothing: antialiased;
-  }
-  .glow-top {
-    position: fixed; top: -120px; left: 50%; transform: translateX(-50%);
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(26,107,46,0.4) 0%, transparent 70%);
-    pointer-events: none; z-index: 0;
-  }
-  .page {
-    position: relative; z-index: 1; max-width: 430px; margin: 0 auto;
-    padding: 48px 20px 64px; display: flex; flex-direction: column;
-    align-items: center; gap: 24px;
-  }
+  html, body { background: var(--dark); color: #fff; font-family: 'Barlow', sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  .glow-top { position: fixed; top: -120px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(26,107,46,0.4) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+  .page { position: relative; z-index: 1; max-width: 430px; margin: 0 auto; padding: 48px 20px 64px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
   .header { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .ball { font-size: 56px; line-height: 1; margin-bottom: 12px; animation: float 3s ease-in-out infinite; }
   @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-  .tag {
-    display: inline-block; background: rgba(245,197,24,0.12);
-    border: 1px solid rgba(245,197,24,0.3); color: var(--gold);
-    font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
-    letter-spacing: 3px; text-transform: uppercase; padding: 5px 14px;
-    border-radius: 100px; margin-bottom: 18px;
-  }
-  h1 {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 68px; font-weight: 900;
-    line-height: 0.88; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 4px;
-  }
+  .tag { display: inline-block; background: rgba(245,197,24,0.12); border: 1px solid rgba(245,197,24,0.3); color: var(--gold); font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 18px; }
+  h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 68px; font-weight: 900; line-height: 0.88; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 4px; }
   h1 em { font-style: italic; color: var(--gold); }
   .subtitle { font-size: 14px; font-weight: 300; color: var(--muted); letter-spacing: 0.5px; }
   .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; }
@@ -54,41 +29,17 @@
   .stat-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 3px; }
   .cta-section { width: 100%; display: flex; flex-direction: column; gap: 10px; }
   .cta-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 4px; }
-  .btn-primary {
-    display: flex; align-items: center; justify-content: center; gap: 12px;
-    width: 100%; padding: 20px 24px; background: var(--gold); color: #000;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900;
-    letter-spacing: 0.5px; text-transform: uppercase; border-radius: 16px;
-    text-decoration: none; border: none; cursor: pointer;
-    transition: all 0.15s; position: relative; overflow: hidden;
-  }
-  .btn-primary::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 50%);
-  }
+  .btn-primary { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 20px 24px; background: var(--gold); color: #000; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border-radius: 16px; text-decoration: none; border: none; cursor: pointer; transition: all 0.15s; position: relative; overflow: hidden; }
+  .btn-primary::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 50%); }
   .btn-primary:active { transform: scale(0.98); opacity: 0.92; }
   .btn-icon { font-size: 24px; position: relative; }
   .btn-text { position: relative; line-height: 1; }
-  .btn-sub {
-    font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 400;
-    opacity: 0.6; text-transform: none; letter-spacing: 0; display: block; margin-top: 2px;
-  }
-  .btn-secondary {
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    width: 100%; padding: 15px 20px; background: transparent;
-    color: rgba(255,255,255,0.6); font-size: 14px;
-    border: 1px solid var(--border); border-radius: 12px;
-    text-decoration: none; transition: all 0.15s;
-  }
-  .btn-secondary:active { background: rgba(255,255,255,0.05); color: #fff; }
+  .btn-sub { font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 400; opacity: 0.6; text-transform: none; letter-spacing: 0; display: block; margin-top: 2px; }
+  .btn-secondary { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px 20px; background: transparent; color: rgba(255,255,255,0.6); font-size: 14px; border: 1px solid var(--border); border-radius: 12px; text-decoration: none; transition: all 0.15s; }
   .divider-row { display: flex; align-items: center; gap: 12px; width: 100%; }
   .divider-row::before, .divider-row::after { content: ''; flex: 1; height: 1px; background: var(--border); }
   .divider-row span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-  .arg-card {
-    width: 100%;
-    background: linear-gradient(135deg, rgba(116,172,228,0.08) 0%, rgba(245,197,24,0.05) 100%);
-    border: 1px solid rgba(116,172,228,0.2); border-radius: 16px; padding: 20px;
-  }
+  .arg-card { width: 100%; background: linear-gradient(135deg, rgba(116,172,228,0.08) 0%, rgba(245,197,24,0.05) 100%); border: 1px solid rgba(116,172,228,0.2); border-radius: 16px; padding: 20px; }
   .arg-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
   .arg-flag { font-size: 24px; }
   .arg-name { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); }
@@ -101,6 +52,7 @@
   .match-venue { font-size: 11px; color: var(--muted); margin-top: 2px; }
   .match-time { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; white-space: nowrap; }
   .footer { font-size: 11px; color: rgba(255,255,255,0.18); text-align: center; line-height: 1.7; }
+  .hidden { display: none !important; }
 </style>
 </head>
 <body>
@@ -123,36 +75,24 @@
     <p class="cta-label">Agregá el calendario ahora</p>
 
 ```
-<!-- iOS button -->
-<a class="btn-primary" id="btn-ios" href="https://tinyurl.com/mundial2026santi" style="display:none">
+<a class="btn-primary hidden" id="btn-ios" href="https://tinyurl.com/mundial2026santi">
   <span class="btn-icon">📅</span>
-  <span class="btn-text">
-    Agregar al calendario
-    <span class="btn-sub">Toca aquí · abre Apple o Google Calendar</span>
-  </span>
+  <span class="btn-text">Agregar al calendario<span class="btn-sub">Abre Apple Calendar o Google Calendar</span></span>
 </a>
 
-<!-- Android button -->
-<a class="btn-primary" id="btn-android" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank" style="display:none">
+<a class="btn-primary hidden" id="btn-android" href="https://santidelgiudice.github.io/mundial2026/mundial2026.ics" download="mundial2026.ics">
   <span class="btn-icon">📅</span>
-  <span class="btn-text">
-    Agregar a Google Calendar
-    <span class="btn-sub">Toca aquí · abre Google Calendar</span>
-  </span>
+  <span class="btn-text">Descargar e importar<span class="btn-sub">Descarga el archivo · abrilo para agregarlo</span></span>
 </a>
 
-<!-- Desktop fallback -->
-<a class="btn-primary" id="btn-desktop" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank" style="display:none">
+<a class="btn-primary hidden" id="btn-desktop" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank">
   <span class="btn-icon">📅</span>
-  <span class="btn-text">
-    Agregar a Google Calendar
-    <span class="btn-sub">Abre Google Calendar en el navegador</span>
-  </span>
+  <span class="btn-text">Agregar a Google Calendar<span class="btn-sub">Abre Google Calendar en el navegador</span></span>
 </a>
 
-<div class="divider-row"><span>otras opciones</span></div>
-<a class="btn-secondary" id="btn-alt-ios" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank" style="display:none">Agregar desde Google Calendar web →</a>
-<a class="btn-secondary" id="btn-alt-android" href="https://tinyurl.com/mundial2026santi">Agregar a Apple / otro calendario →</a>
+<div class="divider-row hidden" id="div-alt"><span>otras opciones</span></div>
+<a class="btn-secondary hidden" id="btn-alt-ios" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank">Agregar desde Google Calendar web →</a>
+<a class="btn-secondary hidden" id="btn-alt-android" href="https://tinyurl.com/mundial2026santi">Agregar a Apple Calendar →</a>
 ```
 
   </div>
@@ -160,34 +100,22 @@
   <div class="arg-card">
     <div class="arg-header">
       <span class="arg-flag">🇦🇷</span>
-      <div>
-        <div class="arg-name">Argentina</div>
-        <div class="arg-group">Grupo J · Dallas & Kansas City</div>
-      </div>
+      <div><div class="arg-name">Argentina</div><div class="arg-group">Grupo J · Dallas & Kansas City</div></div>
     </div>
     <div class="matches">
       <div class="match">
         <div class="match-date">16 JUN</div>
-        <div class="match-info">
-          <div class="match-teams">🇦🇷 Argentina vs Argelia 🇩🇿</div>
-          <div class="match-venue">Arrowhead Stadium, Kansas City</div>
-        </div>
+        <div class="match-info"><div class="match-teams">🇦🇷 Argentina vs Argelia 🇩🇿</div><div class="match-venue">Arrowhead Stadium, Kansas City</div></div>
         <div class="match-time">22:00</div>
       </div>
       <div class="match">
         <div class="match-date">22 JUN</div>
-        <div class="match-info">
-          <div class="match-teams">🇦🇷 Argentina vs Austria 🇦🇹</div>
-          <div class="match-venue">AT&T Stadium, Dallas</div>
-        </div>
+        <div class="match-info"><div class="match-teams">🇦🇷 Argentina vs Austria 🇦🇹</div><div class="match-venue">AT&T Stadium, Dallas</div></div>
         <div class="match-time">14:00</div>
       </div>
       <div class="match">
         <div class="match-date">27 JUN</div>
-        <div class="match-info">
-          <div class="match-teams">🇯🇴 Jordania vs Argentina 🇦🇷</div>
-          <div class="match-venue">AT&T Stadium, Dallas</div>
-        </div>
+        <div class="match-info"><div class="match-teams">🇯🇴 Jordania vs Argentina 🇦🇷</div><div class="match-venue">AT&T Stadium, Dallas</div></div>
         <div class="match-time">23:00</div>
       </div>
     </div>
@@ -201,14 +129,15 @@
   const isAndroid = /Android/.test(ua);
 
   if (isIOS) {
-    document.getElementById('btn-ios').style.display = 'flex';
-    document.getElementById('btn-alt-ios').style.display = 'flex';
-    document.getElementById('btn-alt-android').style.display = 'none';
+    document.getElementById('btn-ios').classList.remove('hidden');
+    document.getElementById('div-alt').classList.remove('hidden');
+    document.getElementById('btn-alt-ios').classList.remove('hidden');
   } else if (isAndroid) {
-    document.getElementById('btn-android').style.display = 'flex';
+    document.getElementById('btn-android').classList.remove('hidden');
+    document.getElementById('div-alt').classList.remove('hidden');
+    document.getElementById('btn-alt-android').classList.remove('hidden');
   } else {
-    document.getElementById('btn-desktop').style.display = 'flex';
-    document.getElementById('btn-alt-android').style.display = 'none';
+    document.getElementById('btn-desktop').classList.remove('hidden');
   }
 </script>
 
