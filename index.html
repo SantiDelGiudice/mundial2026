@@ -8,11 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --gold: #F5C518; --dark: #080808;
-    --card: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.09);
-    --muted: rgba(255,255,255,0.38); --blue: #74ACE4;
-  }
+  :root { --gold: #F5C518; --dark: #080808; --card: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.09); --muted: rgba(255,255,255,0.38); --blue: #74ACE4; }
   html, body { background: var(--dark); color: #fff; font-family: 'Barlow', sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
   .glow-top { position: fixed; top: -120px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(26,107,46,0.4) 0%, transparent 70%); pointer-events: none; z-index: 0; }
   .page { position: relative; z-index: 1; max-width: 430px; margin: 0 auto; padding: 48px 20px 64px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
@@ -35,7 +31,7 @@
   .btn-icon { font-size: 24px; position: relative; }
   .btn-text { position: relative; line-height: 1; }
   .btn-sub { font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 400; opacity: 0.6; text-transform: none; letter-spacing: 0; display: block; margin-top: 2px; }
-  .btn-secondary { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px 20px; background: transparent; color: rgba(255,255,255,0.6); font-size: 14px; border: 1px solid var(--border); border-radius: 12px; text-decoration: none; transition: all 0.15s; }
+  .btn-secondary { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px 20px; background: transparent; color: rgba(255,255,255,0.6); font-size: 14px; border: 1px solid var(--border); border-radius: 12px; text-decoration: none; }
   .divider-row { display: flex; align-items: center; gap: 12px; width: 100%; }
   .divider-row::before, .divider-row::after { content: ''; flex: 1; height: 1px; background: var(--border); }
   .divider-row span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
@@ -80,18 +76,18 @@
   <span class="btn-text">Agregar al calendario<span class="btn-sub">Abre Apple Calendar o Google Calendar</span></span>
 </a>
 
-<a class="btn-primary hidden" id="btn-android" href="https://santidelgiudice.github.io/mundial2026/mundial2026.ics" download="mundial2026.ics">
+<a class="btn-primary hidden" id="btn-android" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https%3A%2F%2Fsantidelgiudice.github.io%2Fmundial2026%2Fmundial2026.ics" target="_blank">
   <span class="btn-icon">📅</span>
-  <span class="btn-text">Descargar e importar<span class="btn-sub">Descarga el archivo · abrilo para agregarlo</span></span>
+  <span class="btn-text">Agregar a Google Calendar<span class="btn-sub">Tap → confirmá en Google Calendar</span></span>
 </a>
 
-<a class="btn-primary hidden" id="btn-desktop" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank">
+<a class="btn-primary hidden" id="btn-desktop" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https%3A%2F%2Fsantidelgiudice.github.io%2Fmundial2026%2Fmundial2026.ics" target="_blank">
   <span class="btn-icon">📅</span>
   <span class="btn-text">Agregar a Google Calendar<span class="btn-sub">Abre Google Calendar en el navegador</span></span>
 </a>
 
 <div class="divider-row hidden" id="div-alt"><span>otras opciones</span></div>
-<a class="btn-secondary hidden" id="btn-alt-ios" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https://santidelgiudice.github.io/mundial2026/mundial2026.ics" target="_blank">Agregar desde Google Calendar web →</a>
+<a class="btn-secondary hidden" id="btn-alt-ios" href="https://calendar.google.com/calendar/r/settings/addbyurl?url=https%3A%2F%2Fsantidelgiudice.github.io%2Fmundial2026%2Fmundial2026.ics" target="_blank">Agregar desde Google Calendar web →</a>
 <a class="btn-secondary hidden" id="btn-alt-android" href="https://tinyurl.com/mundial2026santi">Agregar a Apple Calendar →</a>
 ```
 
@@ -127,7 +123,6 @@
   const ua = navigator.userAgent;
   const isIOS = /iPad|iPhone|iPod/.test(ua);
   const isAndroid = /Android/.test(ua);
-
   if (isIOS) {
     document.getElementById('btn-ios').classList.remove('hidden');
     document.getElementById('div-alt').classList.remove('hidden');
